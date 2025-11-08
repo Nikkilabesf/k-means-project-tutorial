@@ -1,117 +1,85 @@
-# 🏡 House Grouping System — K-Means + Supervised Learning  
-*By Pretty Tech Girl ✨*  
+<!-- ✨ PRETTY TECH GIRL - OFFICIAL README TEMPLATE ✨ -->
+
+<div align="center">
+
+# 🏡✨ **HOUSE GROUPING SYSTEM** ✨  
+### *K-Means + Supervised Learning Project by Pretty Tech Girl 💖*
+
+---
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white">
-  <img src="https://img.shields.io/badge/scikit--learn-ML-orange?logo=scikitlearn&logoColor=white">
+  <img src="https://img.shields.io/badge/scikit--learn-Machine%20Learning-orange?logo=scikitlearn&logoColor=white">
   <img src="https://img.shields.io/badge/Matplotlib-Data%20Viz-lightblue?logo=plotly&logoColor=white">
-  <img src="https://img.shields.io/badge/License-MIT-green">
+  <img src="https://img.shields.io/badge/Pandas-Data%20Analysis-green?logo=pandas&logoColor=white">
+  <img src="https://img.shields.io/badge/License-MIT-purple">
   <img src="https://img.shields.io/badge/Made%20with-%F0%9F%92%96%20by%20Pretty%20Tech%20Girl-pink">
 </p>
 
 ---
 
-## 🌍 Project Overview  
-This project groups California housing data into regions based on **median income and geographic coordinates** using **unsupervised learning (K-Means)** — then trains a **supervised model (Random Forest)** to predict the cluster (region) a new house belongs to.
+</div>
 
-📊 The dataset is sourced from the **1990 California Census** and contains:  
-- 🧭 **Latitude**  
-- 📍 **Longitude**  
-- 💰 **Median Income (MedInc)**  
+<div align="center">
 
----
+> 💬 “Sourced from Earth, Prepared for Code.”  
+> — *Pretty Tech Girl 🪄*
 
-## ⚙️ Tech Stack
-| Tool | Purpose |
-|------|----------|
-| 🐍 Python 3.12 | Core programming |
-| 🧠 Scikit-learn | ML algorithms (K-Means, Random Forest) |
-| 📊 Matplotlib | Visualization |
-| 🧾 Pandas / NumPy | Data wrangling |
-| 💾 Joblib | Model saving/loading |
+</div>
 
 ---
 
-## 🧪 Workflow Summary
-1. **Load & Clean Data**  
-   Load housing dataset and extract relevant columns (Latitude, Longitude, MedInc).  
+## 🌍 **Project Overview**
+This project groups California housing data into **regions** based on **median income** and **geographic coordinates** using **Unsupervised Learning (K-Means)** — then trains a **Supervised Model (Random Forest)** to predict which region a new house belongs to.
+
+📊 **Dataset:** California Housing Census (1990)  
+Includes the following features:  
+- 🧭 `Latitude`  
+- 📍 `Longitude`  
+- 💰 `MedInc` *(Median Income)*  
+
+---
+
+## ⚙️ **Tech Stack**
+
+| 🧠 Tool | 💡 Purpose |
+|----------|-------------|
+| 🐍 **Python 3.12** | Core programming |
+| 📘 **Pandas / NumPy** | Data cleaning & analysis |
+| 🧮 **Scikit-learn** | Machine Learning (K-Means, Random Forest) |
+| 📊 **Matplotlib / Seaborn** | Data Visualization |
+| 💾 **Joblib** | Save & load trained models |
+
+---
+
+## 🧪 **Workflow Summary**
+
+1. **Data Preparation**  
+   - Load dataset & extract relevant columns (`Latitude`, `Longitude`, `MedInc`).  
+   - Split into `train` and `test` sets.
 
 2. **Unsupervised Clustering (K-Means)**  
-   - Create 6 clusters (`n_clusters=6`).  
-   - Add `cluster` labels to the dataset.  
-   - Plot clusters geographically to observe region separation.  
+   - Build a K-Means model with 6 clusters.  
+   - Add a new column `cluster` representing region assignment.  
+   - Visualize clusters across California.
 
-3. **Prediction on Test Set**  
-   - Apply K-Means model to unseen test data.  
-   - Overlay both sets to confirm consistency.  
+3. **Prediction with Test Set**  
+   - Use trained K-Means model to predict new house clusters.  
+   - Validate cluster consistency visually.
 
 4. **Supervised Classification (Random Forest)**  
-   - Use cluster labels as training targets.  
-   - Train a classifier to predict cluster IDs.  
-   - Evaluate accuracy and feature importance.  
+   - Use K-Means clusters as labels.  
+   - Train Random Forest classifier.  
+   - Evaluate using accuracy, precision, and recall metrics.
 
-5. **Save Models**  
-   Store both trained models for future predictions using Joblib.
+5. **Model Saving**  
+   - Save both models in a `/models` folder using Joblib.  
 
 ---
 
+## 📈 **Visualization Example**
+<img width="695" height="547" alt="524442f4-cbf6-49fe-9124-beacc17dcbf5" src="https://github.com/user-attachments/assets/fd2ae5a2-9e2d-4caa-9d22-bcd9bc77f5fb" />
+<img width="695" height="547" alt="1b62f7c2-d5b5-4a28-972d-9830438c5d01" src="https://github.com/user-attachments/assets/37f31f8b-832f-4e85-aee4-8a406454b98c" />
+<img width="600" height="435" alt="da49d7b6-f290-4993-87a4-49141e57b68d" src="https://github.com/user-attachments/assets/663fa344-f1d7-46f6-aefa-0195fefd8501" />
+🖼️ Each color represents a unique regional grouping by median income.
 
-🧠 Results Summary
-
-✅ 6 clusters form clear patterns across California.
-
-💰 Higher-income areas cluster distinctly along the coast.
-
-🌄 Inland, lower-income regions form separate groups.
-
-🔮 Random Forest accuracy: ~85–90%, showing strong model reliability.
-
-⭐ Top feature: MedInc (median income strongly drives cluster boundaries).
-
-REPOSITORY STRUCTURE
-.
-├── data/
-│   └── housing.csv
-├── models/
-│   ├── kmeans_model.pkl
-│   └── random_forest_model.pkl
-├── notebooks/
-│   └── housing_clustering.ipynb
-├── README.md
-└── .gitignore
-
-
-
-
-
-# Clone repository
-git clone https://github.com/Nikkilabesf/house-grouping-system.git
-cd house-grouping-system
-
-# (Optional) Create virtual environment
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run Jupyter Notebook
-jupyter notebook notebooks/housing_clustering.ipynb
-
-
-
-👩🏽‍💻 Author
-
-👋 Hi, I’m Tenika Powell — a Machine Learning Engineer passionate about Healthcare AI, data-driven solutions, and creative tech innovation.
-
-🌐 Brand: Pretty Tech Girl 💖
-💼 Machine Learning Engineer | Data Science | Healthcare AI | FastAPI | TensorFlow | Python
-📍 Based in Michigan, USA
-
-📫 Connect with me:
-
-🔗 https://github.com/Nikkilabesf
-
-💼 LinkedIn: https://www.linkedin.com/in/tenika-powell-ba35022b0/
-
-📧 powell.tenika.n@gmail.com
