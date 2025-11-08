@@ -83,3 +83,66 @@ Includes the following features:
 <img width="600" height="435" alt="da49d7b6-f290-4993-87a4-49141e57b68d" src="https://github.com/user-attachments/assets/663fa344-f1d7-46f6-aefa-0195fefd8501" />
 🖼️ Each color represents a unique regional grouping by median income.
 
+
+🧠 Results Summary
+
+✨ Highlights:
+
+✅ 6 clusters form clear geographic and economic boundaries.
+
+💰 Higher-income clusters concentrate along the coast.
+
+🌄 Inland regions show lower-income clusters.
+
+🎯 Random Forest Accuracy: ~85–90%.
+
+🌟 Most Influential Feature: MedInc.
+
+
+🧰 Repository Structure
+📦 house-grouping-system
+│
+├── data/
+│   └── housing.csv
+│
+├── models/
+│   ├── kmeans_model.pkl
+│   └── random_forest_model.pkl
+│
+├── notebooks/
+│   └── housing_clustering.ipynb
+│
+├── README.md
+└── .gitignore
+
+
+💡 Future Improvements
+
+🌀 Add DBSCAN or Agglomerative Clustering for comparison.
+
+🗺️ Use Folium or Plotly Mapbox for geospatial heatmaps.
+
+🧱 Build a Streamlit or Gradio dashboard to visualize clusters.
+
+⚡ Create a FastAPI endpoint to serve model predictions.
+
+<div align="center">
+👩🏽‍💻 Author
+✨ Tenika Powell
+
+Machine Learning Engineer | Healthcare AI | Pretty Tech Girl Founder
+
+💖 Passionate about turning real-world data into intelligent, human-centered technology.
+Currently focused on ML & Deep Learning applications in healthcare and creative AI innovation.
+
+📍 Michigan, USA
+
+🔗 Connect With Me
+💼 LinkedIn
+ | 💻 GitHub
+ | 📧 powell.tenika.n@gmail.com
+
+✨ Sourced from Earth, Prepared for Code.
+
+</div> ```
+
