@@ -120,8 +120,8 @@ jupyter notebook notebooks/housing_clustering.ipynb
 
 📫 Connect with me:
 
-🔗 GitHub: @Nikkilabesf
+🔗 https://github.com/Nikkilabesf
 
-💼 LinkedIn: Tenika Powell
+💼 LinkedIn: https://www.linkedin.com/in/tenika-powell-ba35022b0/
 
 📧 powell.tenika.n@gmail.com
