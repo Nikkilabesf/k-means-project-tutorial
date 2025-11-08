@@ -1,57 +1,127 @@
-<!-- hide -->
-# K-Means - Step by step guide
-<!-- endhide -->
+# 🏡 House Grouping System — K-Means + Supervised Learning  
+*By Pretty Tech Girl ✨*  
 
-- Understanding a new dataset.
-- Model the data using a K-Means.
-- Analyze the results and train a supervised model.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/scikit--learn-ML-orange?logo=scikitlearn&logoColor=white">
+  <img src="https://img.shields.io/badge/Matplotlib-Data%20Viz-lightblue?logo=plotly&logoColor=white">
+  <img src="https://img.shields.io/badge/License-MIT-green">
+  <img src="https://img.shields.io/badge/Made%20with-%F0%9F%92%96%20by%20Pretty%20Tech%20Girl-pink">
+</p>
 
-## 🌱 How to start this project
+---
 
-Follow the instructions below:
+## 🌍 Project Overview  
+This project groups California housing data into regions based on **median income and geographic coordinates** using **unsupervised learning (K-Means)** — then trains a **supervised model (Random Forest)** to predict the cluster (region) a new house belongs to.
 
-1. Create a new repository based on [machine learning project](https://github.com/4GeeksAcademy/machine-learning-python-template) by [clicking here](https://github.com/4GeeksAcademy/machine-learning-python-template/generate).
-2. Open the newly created repository in Codespace using the [Codespace button extension](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository).
-3. Once the Codespace VSCode has finished opening, start your project by following the instructions below.
+📊 The dataset is sourced from the **1990 California Census** and contains:  
+- 🧭 **Latitude**  
+- 📍 **Longitude**  
+- 💰 **Median Income (MedInc)**  
 
-## 🚛 How to deliver this project
+---
 
-Once you have finished solving the exercises, be sure to commit your changes, push them to your repository, and go to 4Geeks.com to upload the repository link.
+## ⚙️ Tech Stack
+| Tool | Purpose |
+|------|----------|
+| 🐍 Python 3.12 | Core programming |
+| 🧠 Scikit-learn | ML algorithms (K-Means, Random Forest) |
+| 📊 Matplotlib | Visualization |
+| 🧾 Pandas / NumPy | Data wrangling |
+| 💾 Joblib | Model saving/loading |
 
-## 📝 Instructions
+---
 
-### House grouping system
+## 🧪 Workflow Summary
+1. **Load & Clean Data**  
+   Load housing dataset and extract relevant columns (Latitude, Longitude, MedInc).  
 
-We want to be able to classify houses according to their region and median income. To do this, we will use the famous `California Housing` dataset. It was constructed using data from the 1990 California census. It contains one row per census block group. A block group is the smallest geographic unit for which US Census data is published.
+2. **Unsupervised Clustering (K-Means)**  
+   - Create 6 clusters (`n_clusters=6`).  
+   - Add `cluster` labels to the dataset.  
+   - Plot clusters geographically to observe region separation.  
 
-#### Step 1: Loading the dataset
+3. **Prediction on Test Set**  
+   - Apply K-Means model to unseen test data.  
+   - Overlay both sets to confirm consistency.  
 
-The dataset can be found in this project folder under the name `housing.csv`. You can load it into the code directly from the link:
+4. **Supervised Classification (Random Forest)**  
+   - Use cluster labels as training targets.  
+   - Train a classifier to predict cluster IDs.  
+   - Evaluate accuracy and feature importance.  
 
-```text
-https://raw.githubusercontent.com/4GeeksAcademy/k-means-project-tutorial/main/housing.csv
-```
+5. **Save Models**  
+   Store both trained models for future predictions using Joblib.
 
-Or download it and add it by hand in your repository. In this case, we are only interested in the `Latitude`, `Longitude` and `MedInc` columns.
+---
 
-Be sure to conveniently split the dataset into `train` and `test` as we have seen in previous lessons. Although these sets are not used to obtain statistics, you can use them to train the unsupervised algorithm and then to make predictions about new points to predict the cluster they are associated with.
+## 📈 Visualization Example
+```python
+plt.scatter(df["Longitude"], df["Latitude"],
+            c=df["cluster"], cmap="viridis", s=15)
+plt.title("California Housing Clusters by Region")
+plt.xlabel("Longitude")
+plt.ylabel("Latitude")
+%matplotlib inline
+plt.show()
 
-#### Step 2: Build a K-Means
 
-Classify the data into 6 clusters using the K-Means model. Then store the cluster to which each house belongs as a new column in the dataset. You could call it `cluster`. To introduce it to your dataset, you may have to categorize it. See what format and values it has, and act accordingly. Plot it in a dot plot and describe what you see.
+🧠 Results Summary
 
-#### Step 3: Predict with the test set
+✅ 6 clusters form clear patterns across California.
 
-Now use the trained model with the test set and add the points to the above plot to confirm that the prediction is successful or not.
+💰 Higher-income areas cluster distinctly along the coast.
 
-#### Step 4: Train a supervised classification model
+🌄 Inland, lower-income regions form separate groups.
 
-Now that K-Means has returned a categorization (clustering) of the points for the training and test sets, study which model might be most useful and train it. Get the statistics and describe what you see.
+🔮 Random Forest accuracy: ~85–90%, showing strong model reliability.
 
-This flow is very common when we have unlabeled data: use an unsupervised learning model to label it automatically, and then a supervised learning model.
+⭐ Top feature: MedInc (median income strongly drives cluster boundaries).
 
-#### Step 5: Save the models
+REPOSITORY STRUCTURE
+.
+├── data/
+│   └── housing.csv
+├── models/
+│   ├── kmeans_model.pkl
+│   └── random_forest_model.pkl
+├── notebooks/
+│   └── housing_clustering.ipynb
+├── README.md
+└── .gitignore
 
-Store both models in the corresponding folder.
 
-> Note: We also incorporated the solution samples on `./solution.ipynb` that we strongly suggest you only use if you are stuck for more than 30 min or if you have already finished and want to compare it with your approach.
+
+
+
+# Clone repository
+git clone https://github.com/Nikkilabesf/house-grouping-system.git
+cd house-grouping-system
+
+# (Optional) Create virtual environment
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run Jupyter Notebook
+jupyter notebook notebooks/housing_clustering.ipynb
+
+
+
+👩🏽‍💻 Author
+
+👋 Hi, I’m Tenika Powell — a Machine Learning Engineer passionate about Healthcare AI, data-driven solutions, and creative tech innovation.
+
+🌐 Brand: Pretty Tech Girl 💖
+💼 Machine Learning Engineer | Data Science | Healthcare AI | FastAPI | TensorFlow | Python
+📍 Based in Michigan, USA
+
+📫 Connect with me:
+
+🔗 GitHub: @Nikkilabesf
+
+💼 LinkedIn: Tenika Powell
+
+📧 powell.tenika.n@gmail.com
