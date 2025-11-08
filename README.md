@@ -99,6 +99,8 @@ Includes the following features:
 🌟 Most Influential Feature: MedInc.
 
 
+
+
 🧰 Repository Structure
 📦 house-grouping-system
 │
@@ -116,6 +118,9 @@ Includes the following features:
 └── .gitignore
 
 
+
+
+
 💡 Future Improvements
 
 🌀 Add DBSCAN or Agglomerative Clustering for comparison.
@@ -125,6 +130,11 @@ Includes the following features:
 🧱 Build a Streamlit or Gradio dashboard to visualize clusters.
 
 ⚡ Create a FastAPI endpoint to serve model predictions.
+
+
+
+
+
 
 <div align="center">
 👩🏽‍💻 Author
