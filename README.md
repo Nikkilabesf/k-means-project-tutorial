@@ -55,16 +55,6 @@ This project groups California housing data into regions based on **median incom
 
 ---
 
-## 📈 Visualization Example
-```python
-plt.scatter(df["Longitude"], df["Latitude"],
-            c=df["cluster"], cmap="viridis", s=15)
-plt.title("California Housing Clusters by Region")
-plt.xlabel("Longitude")
-plt.ylabel("Latitude")
-%matplotlib inline
-plt.show()
-
 
 🧠 Results Summary
 
